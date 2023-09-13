@@ -62,7 +62,7 @@ public class UserTest {
         User user = new User(username, password);
 
         //Then
-        assertNotNull(user);
+        assertNull(user);
 
     }
 
