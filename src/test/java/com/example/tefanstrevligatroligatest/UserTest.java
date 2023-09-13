@@ -21,6 +21,20 @@ public class UserTest {
         assertEquals(getUsername, username);
 
     }
+    @Test
+    void can_get_password_with_getter() {
+        //Given
+        String username = "Tefis";
+        String password = "TefisIsBestis";
+        User user = new User(username, password);
+
+        //When
+        String getPassword = user.getUsername();
+
+        //Then
+        assertEquals(getPassword, username);
+
+    }
 
     @Test
     void user_with_same_name_is_same() {
