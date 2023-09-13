@@ -17,4 +17,12 @@ public class User {
     public String getPassword() {
         return password;
     }
+
+    public boolean UsernameIsSame(User otherUser){
+        if (this.username == otherUser.username){
+            return true;
+        }else {
+            return false;
+        }
+    }
 }

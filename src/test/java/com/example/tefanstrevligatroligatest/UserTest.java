@@ -28,10 +28,10 @@ public class UserTest {
         String username = "Tefis";
         String password = "TefisIsBestis";
         User user1 = new User(username, password);
-        User user2 = new User(username, password);
+        User user2 = new User("WokaWoka", password);
 
         //When
-        boolean isItSame = user1.userIsSame(user2);
+        boolean isItSame = user1.UsernameIsSame(user2);
 
         //Then
         assertTrue(isItSame);
