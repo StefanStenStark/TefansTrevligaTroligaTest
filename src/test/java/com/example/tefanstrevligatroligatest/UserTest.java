@@ -2,8 +2,7 @@ package com.example.tefanstrevligatroligatest;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class UserTest {
 
@@ -49,6 +48,21 @@ public class UserTest {
 
         //Then
         assertTrue(isItSame);
+
+    }
+
+    @Test
+    void userConstructor_create_name_and_password_success() {
+        //Given
+        String username = "Tefis";
+        String password = "TefisIsBestis";
+
+
+        //When
+        User user = new User(username, password);
+
+        //Then
+        assertNotNull(user);
 
     }
 
