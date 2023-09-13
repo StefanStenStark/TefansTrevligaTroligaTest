@@ -11,7 +11,7 @@ public class User {
     }
 
     public String getUsername() {
-        return "WokaWokaEeOoh";
+        return username;
     }
 
     public String getPassword() {
