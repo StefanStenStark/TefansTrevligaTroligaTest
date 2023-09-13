@@ -29,10 +29,10 @@ public class UserTest {
         User user = new User(username, password);
 
         //When
-        String getPassword = user.getUsername();
+        String getPassword = user.getPassword();
 
         //Then
-        assertEquals(getPassword, username);
+        assertEquals(getPassword, password);
 
     }
 
