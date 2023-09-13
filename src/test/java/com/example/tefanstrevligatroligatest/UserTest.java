@@ -3,6 +3,7 @@ package com.example.tefanstrevligatroligatest;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class UserTest {
 
@@ -18,6 +19,22 @@ public class UserTest {
 
         //Then
         assertEquals(getUsername, username);
+
+    }
+
+    @Test
+    void user_with_same_name_is_same() {
+        //Given
+        String username = "Tefis";
+        String password = "TefisIsBestis";
+        User user1 = new User(username, password);
+        User user2 = new User(username, password);
+
+        //When
+        boolean isItSame = user1.userIsSame(user2);
+
+        //Then
+        assertTrue(isItSame);
 
     }
 }
