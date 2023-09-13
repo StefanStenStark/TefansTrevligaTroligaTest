@@ -1,17 +1,34 @@
 package com.example.tefanstrevligatroligatest;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
+@ExtendWith(MockitoExtension.class)
 public class ServiceTest {
+
+    @Mock
+    UserRepo userRepo;
+
+    private UserService userService;
+
+    @BeforeEach
+    public void setUp(){
+        userService = new UserService(userRepo);
+    }
 
     @Test
     public void test_login(){
         //Given
+        String username = "Tefis";
+        String password = "TefisIsBestis";
         User user = new User(username, password);
 
         //When
@@ -19,6 +36,6 @@ public class ServiceTest {
 
 
         //Then
-        assertTrue((userService.login(username, password)));
+        assertTrue((userService.Login(username, password)));
     }
 }
