@@ -15,7 +15,7 @@ public class User {
     }
 
     public String getPassword() {
-        return "password";
+        return password;
     }
 
     public boolean UsernameIsSame(User otherUser){

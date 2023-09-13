@@ -51,4 +51,5 @@ public class UserTest {
         assertTrue(isItSame);
 
     }
+
 }
