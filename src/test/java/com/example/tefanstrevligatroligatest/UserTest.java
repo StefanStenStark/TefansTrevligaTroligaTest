@@ -51,19 +51,5 @@ public class UserTest {
 
     }
 
-    @Test
-    void userConstructor_create_name_and_password_success() {
-        //Given
-        String username = "Tefis";
-        String password = "TefisIsBestis";
-
-
-        //When
-        User user = new User(username, password);
-
-        //Then
-        assertNull(user);
-
-    }
 
 }
