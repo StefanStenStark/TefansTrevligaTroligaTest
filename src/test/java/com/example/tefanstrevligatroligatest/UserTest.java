@@ -28,7 +28,7 @@ public class UserTest {
         String username = "Tefis";
         String password = "TefisIsBestis";
         User user1 = new User(username, password);
-        User user2 = new User("WokaWoka", password);
+        User user2 = new User(username, password);
 
         //When
         boolean isItSame = user1.UsernameIsSame(user2);
