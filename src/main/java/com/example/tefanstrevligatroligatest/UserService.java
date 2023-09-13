@@ -12,7 +12,7 @@ public class UserService {
 
         if (username != null){
             if (user.getPassword() == password){
-                return false;
+                return true;
             }else {
                 return false;
             }
