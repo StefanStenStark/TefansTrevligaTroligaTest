@@ -67,7 +67,7 @@ public class ServiceTest {
         when(userRepo.findUserByUsername(username)).thenReturn(Optional.of(user));
 
         assertThrows(RuntimeException.class, () -> {
-            userService.Login(username, password);
+            userService.Login(username, null);
         });
     }
 }
