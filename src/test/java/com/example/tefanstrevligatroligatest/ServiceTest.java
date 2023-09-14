@@ -6,9 +6,10 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -37,5 +38,22 @@ public class ServiceTest {
 
         //Then
         assertTrue((userService.Login(username, password)));
+    }
+
+
+    @Test
+    public void testLoginFailureNoUserTrowNoSuchElementException() {
+        //Given
+        String username = "Tefis";
+        String password = "TefisIsBestis";
+        User user = new User(username, password);
+
+        //When
+        when(userRepo.findUserByUsername(username)).thenReturn(Optional.of(user));
+
+        //Then
+        assertThrows(NoSuchElementException.class, () -> {
+            userService.Login("Tefis","NoNoNoNo");
+        });
     }
 }

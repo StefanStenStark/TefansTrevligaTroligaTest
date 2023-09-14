@@ -10,7 +10,7 @@ public class UserService {
     public boolean Login(String username, String password){
         User user = userRepo.findUserByUsername(username).orElseThrow();
 
-        if (username != null){
+        if (password != null){
             if (user.getPassword() == password){
                 return true;
             }else {
@@ -20,4 +20,6 @@ public class UserService {
             throw new RuntimeException("No password");
         }
     }
+
+
 }
