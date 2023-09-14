@@ -43,12 +43,6 @@ public class ServiceTest {
 
     @Test
     public void testLoginFailureNoUserTrowNoSuchElementException() {
-        //Given
-        String username = "Tefis";
-        String password = "TefisIsBestis";
-        User user = new User(username, password);
-
-
 
         //Then
         assertThrows(NoSuchElementException.class, () -> {
@@ -58,7 +52,7 @@ public class ServiceTest {
 
     @Test
     public void testNullPasswordShouldReturnRuntimeException() {
-        // Create a mock UserRepository (userRepo) with a user
+        //Given
         String username = "Tefis";
         String password = "TefisIsBestis";
         User user = new User(username, password);
@@ -66,6 +60,7 @@ public class ServiceTest {
         //When
         when(userRepo.findUserByUsername(username)).thenReturn(Optional.of(user));
 
+        //Then
         assertThrows(RuntimeException.class, () -> {
             userService.Login(username, null);
         });
