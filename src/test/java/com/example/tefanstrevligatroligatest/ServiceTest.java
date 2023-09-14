@@ -55,4 +55,19 @@ public class ServiceTest {
             userService.Login("Tefis","NoNoNoNo");
         });
     }
+
+    @Test
+    public void testNullPasswordShouldReturnRuntimeException() {
+        // Create a mock UserRepository (userRepo) with a user
+        String username = "Tefis";
+        String password = "TefisIsBestis";
+        User user = new User(username, password);
+
+        //When
+        when(userRepo.findUserByUsername(username)).thenReturn(Optional.of(user));
+
+        assertThrows(RuntimeException.class, () -> {
+            userService.Login(username, password);
+        });
+    }
 }
