@@ -48,8 +48,7 @@ public class ServiceTest {
         String password = "TefisIsBestis";
         User user = new User(username, password);
 
-        //When
-        when(userRepo.findUserByUsername(username)).thenReturn(Optional.of(user));
+
 
         //Then
         assertThrows(NoSuchElementException.class, () -> {
